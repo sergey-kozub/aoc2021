@@ -111,7 +111,7 @@ impl Scanner {
         let mut size = try_sizes.pop().unwrap();
 
         'outer: while !input.is_empty() {
-            for i in 0..result.len() {
+            for i in (0..result.len()).rev() {
                 for j in 0..input.len() {
                     if let Some(scanner) = result[i].find_match(&input[j], size) {
                         result.push(scanner);
